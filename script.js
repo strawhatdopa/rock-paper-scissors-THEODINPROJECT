@@ -26,28 +26,21 @@ function playGame() {
 
 function playRound(hS, cS) {
 
-
-  if (hS == "scissors" && cS == "paper") {
-    console.log("You win! Scissors beat Paper!")
-    humanScore = humanScore + 1
-  } else if (hS == "rock" && cS == "scissors") {
-    console.log("You win! Rock beats Scissors!")
-    humanScore = humanScore + 1
-  } else if (hS == "paper" && cS == "rock") {
-    console.log("You win Paper beats Rock!")
-    humanScore = humanScore + 1
+  if (
+    (hS == "rock" && cS == "scissors") ||
+    (hS == "scissors" && cS == "paper") ||
+    (hS == "paper" && cS == "rock")
+  ) {
+    console.log("You won! " + hS + " beats " + cS)
+    humanScore++;
   } else if (hS == cS) {
-    console.log("It's a draw! You both chose " + hS + "!")
-  } else if (hS == "rock" && cS == "paper") {
-    console.log("You lose! Paper beats Rock!")
-    computerScore = computerScore + 1
-  } else if (hS == "paper" && cS == "scissors") {
-    console.log("You lose! Scissors beat Paper!")
-    computerScore = computerScore + 1
-  } else if (hS == "scissors" && cS == "rock") {
-    console.log("You lose! Rock beats Scissors!")
-    computerScore = computerScore + 1
+    console.log("It's a tie! You both picked " + hS)
+  } else {
+    console.log("You lost! " + cS + " beats " + hS)
+    computerScore++;
   }
+
+
 }
 
   for (let i = 0; i < 5; i++) {
