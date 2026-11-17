@@ -3,18 +3,18 @@ function computerChoice() {
   let value;
 
   if (num <= 0.33) {
-    value = "rock"
+    value = "Rock"
   } else if (num <= 0.66) {
-    value = "paper"
+    value = "Paper"
   } else {
-    value = "scissors"
+    value = "Scissors"
   }
   return value;
 }
 
 function getHumanChoice() {
   let choice = prompt("Rock, Paper or Scissors?", " ")
-  choice = choice.toLowerCase()
+  choice = choice.charAt(0).toUpperCase() + choice.toLowerCase().slice(1)
   return choice
 }
 
