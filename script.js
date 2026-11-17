@@ -24,23 +24,6 @@ function playGame() {
   let humanScore = 0
   let computerScore = 0
 
-  for (let i = 0; i < 5; i++) {
-    console.log("Round " + (i + 1));
-    const hS = getHumanChoice()
-    const cS = computerChoice()
-    playRound(hS, cS);
-    console.log("Your score: " + humanScore + " Computer Score " + computerScore);
-    console.log(" ");
-  }
-  
-  if (humanScore > computerScore) {
-    return "You win!"
-  } else if (computerScore > humanScore) {
-    return "You lose!"
-  } else {
-    return "It's a draw!"
-  }
-
 function playRound(hS, cS) {
 
 
@@ -66,6 +49,23 @@ function playRound(hS, cS) {
     computerScore = computerScore + 1
   }
 }
+
+  for (let i = 0; i < 5; i++) {
+    console.log("Round " + (i + 1));
+    const hS = getHumanChoice()
+    const cS = computerChoice()
+    playRound(hS, cS);
+    console.log("Your score: " + humanScore + " Computer Score " + computerScore);
+    console.log(" ");
+  }
+  
+  if (humanScore > computerScore) {
+    return "You win!"
+  } else if (computerScore > humanScore) {
+    return "You lose!"
+  } else {
+    return "It's a draw!"
+  }
 
 }
 
