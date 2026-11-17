@@ -1,6 +1,5 @@
-let humanScore = 0
-let computerScore = 0
-
+  let humanScore = 0
+  let computerScore = 0
 
 function computerChoice() {
   let num = Math.random();
@@ -16,17 +15,15 @@ function computerChoice() {
   return value;
 }
 
-
-
 function getHumanChoice() {
   let choice = prompt("Rock, Paper or Scissors?", " ")
   choice = choice.toLowerCase()
   return choice
 }
 
-
-
 function playRound(hS, cS) {
+
+
   if (hS == "scissors" && cS == "paper") {
     console.log("You win! Scissors beat Paper!")
     humanScore = humanScore + 1
@@ -55,11 +52,23 @@ function playRound(hS, cS) {
 
 function playGame() {
   for (let i = 0; i < 5; i++) {
+    console.log("Round " + (i + 1));
     const hS = getHumanChoice()
     const cS = computerChoice()
-    console.log(playRound(hS, cS));
+    playRound(hS, cS);
     console.log("Your score: " + humanScore + " Computer Score " + computerScore);
+    console.log(" ");
   }
+  
+  if (humanScore > computerScore) {
+    return "You win!"
+  } else if (computerScore > humanScore) {
+    return "You lose!"
+  } else {
+    return "It's a draw!"
+  }
+
 }
+
 
 console.log(playGame())
