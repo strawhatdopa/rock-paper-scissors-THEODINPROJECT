@@ -27,9 +27,9 @@ function playGame() {
 function playRound(hS, cS) {
 
   if (
-    (hS == "rock" && cS == "scissors") ||
-    (hS == "scissors" && cS == "paper") ||
-    (hS == "paper" && cS == "rock")
+    (hS == "Rock" && cS == "Scissors") ||
+    (hS == "Scissors" && cS == "Paper") ||
+    (hS == "Paper" && cS == "Rock")
   ) {
     console.log("You won! " + hS + " beats " + cS)
     humanScore++;
